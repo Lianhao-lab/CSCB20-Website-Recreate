@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>CSCB20-Grades</title>
+        <link rel="stylesheet" type="text/css" href="../static/style/grades.css">
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="navigation">
+                <li class="navigation"><a class="active" href="/">Home&nbsp;</a></li>
+                <li class="navigation"><a href="../static/image/B20.pdf" target="_blank">Syllabus&nbsp;</a></li>
+                <li class="navigation"><a href="/calendar">Calendar&nbsp;</a></li>
+                <li class="navigation"><a href="/news">News&nbsp;</a></li>
+                <li class="navigation"><a href="https://piazza.com/class/lqy466htv8g5xb" target="_blank">Piazza&nbsp;</a></li>
+                <li class="navigation"><a href="/lectures">Lectures&nbsp;</a></li>
+                <li class="navigation"><a href="/labs">Labs&nbsp;</a></li>
+                <li class="navigation"><a href="/assignments">Assignments&nbsp;</a></li>
+                <li class="navigation"><a href="/tests">Tests&nbsp;</a></li>
+                <li class="navigation"><a href="https://markus2.utsc.utoronto.ca/" target="_blank">Markus&nbsp;</a></li>
+                <li class="navigation"><a href="/courseteam">CourseTeam&nbsp;</a></li>
+                <li class="navigation"><a href="/feedback">Feedback</a></li>
+                <li class="navigation logout-button"><a href="/logout">Log out</a></li>
+            </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2>Your Grades</h2>
+        <form action="/request_regrade" method="post">
+            <label for="assignment">Select project for regrade:</label>
+            <select name="assignment" id="assignment">
+                <option value="assignment1">Assignment 1</option>
+                <option value="assignment2">Assignment 2</option>
+                <option value="assignment3">Assignment 3</option>
+                <option value="midterm">Midterm</option>
+                <option value="labs">Labs</option>
+                <option value="final_exam">Final Exam</option>
+            </select>
+            <input type="submit" value="Request Regrade">
+        </form>
+        <hr>
+        <table>
+            <tr>
+                <th>Student name</th>
+                <th>Assignment 1</th>
+                <th>Assignment 2</th>
+                <th>Assignment 3</th>
+                <th>Midterm</th>
+                <th>Labs</th>
+                <th>Final Exam</th>
+            </tr>
+            <tbody>
+                {% for a in grade %}
+                <tr>
+                    <td>{{ a.student_name }}</td>
+                    <td>{{ a.assignment1 }}</td>
+                    <td>{{ a.assignment2 }}</td>
+                    <td>{{ a.assignment3 }}</td>
+                    <td>{{ a.midterm }}</td>
+                    <td>{{ a.labs }}</td>
+                    <td>{{ a.final_exam }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+        <div class="footer">
+            <h2>CSCB20
+                <p>Introduction to Web & Database</p>
+            </h2>
+            <div class="content">Department of Computer Science at UofT
+                <p>Site designed by Zishuo Wang & Zhencheng Li & Lianhao Zhang</p>
+            </div>
+            <h2>Navigation</h2>
+                <a href="index"><li class="home">Home&nbsp;</li></a>
+                <a href="../static/image/B20.pdf" target="_blank"><li>Syllabus&nbsp;</li></a>
+                <a href="calendar"><li>Calendar&nbsp;</li></a>
+                <a href="news"><li>News&nbsp;</li></a>
+                <a href="https://piazza.com/class/lqy466htv8g5xb" target="_blank"><li>Piazza&nbsp;</li></a>
+                <a href="lectures"><li>Lectures&nbsp;</li></a>
+                <a href="labs"><li class="lab">Labs&nbsp;</li></a>
+                <a href="assignments"><li>Assignments&nbsp;</li></a>
+                <a href="tests"><li>Tests&nbsp;</li></a>
+                <a href="https://markus2.utsc.utoronto.ca/" target="_blank"><li>Markus&nbsp;</li></a>
+                <a href="courseteam"><li>CourseTeam&nbsp;</li></a>
+                <a href="feedback"><li>Anon Feedback&nbsp;</li></a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+Python 3.10.7
+
+flask
+
+from flask import Flask, render_template, redirect, session, request
+import sqlite3
+from flask_bcrypt import Bcrypt
+from datetime import timedelta

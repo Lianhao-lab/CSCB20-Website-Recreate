@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>CSCB20-Feedback-Student</title>
+        <link rel="stylesheet" type="text/css" href="../static/style/feedback_student.css">
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="navigation">
+                <li class="navigation"><a class="active" href="/">Home&nbsp;</a></li>
+                <li class="navigation"><a href="../static/image/B20.pdf" target="_blank">Syllabus&nbsp;</a></li>
+                <li class="navigation"><a href="/calendar">Calendar&nbsp;</a></li>
+                <li class="navigation"><a href="/news">News&nbsp;</a></li>
+                <li class="navigation"><a href="https://piazza.com/class/lqy466htv8g5xb" target="_blank">Piazza&nbsp;</a></li>
+                <li class="navigation"><a href="/lectures">Lectures&nbsp;</a></li>
+                <li class="navigation"><a href="/labs">Labs&nbsp;</a></li>
+                <li class="navigation"><a href="/assignments">Assignments&nbsp;</a></li>
+                <li class="navigation"><a href="/tests">Tests&nbsp;</a></li>
+                <li class="navigation"><a href="https://markus2.utsc.utoronto.ca/" target="_blank">Markus&nbsp;</a></li>
+                <li class="navigation"><a href="/courseteam">CourseTeam&nbsp;</a></li>
+                <li class="navigation"><a href="/feedback">Feedback</a></li>
+                <li class="navigation logout-button"><a href="/logout">Log out</a></li>
+            </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2>Choose the instructor which you want him/her to see your feedback:</h2>
+        <form action="/update_feedback" method="post">
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <label for="instructor">Choose your instructor:</label>
+            <select name="ins_name" id="instructor" required>
+                <option value="">Select an Instructor</option>
+                {% for instructor in instructors %}
+                <option value="{{ instructor.username }}">{{ instructor.username }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="feedback_type">What would you like to feedback:</label>
+            <select name="feedback_type" id="feedback_type">
+                <option value="What do students like about your teaching?">What do you like about the instructor teaching?</option>
+                <option value="What do students recommend you to do to improve their teaching?">What do you recommend the instructor to do to improve their teaching?</option>
+                <option value="What do students like about your labs?">What do you like about the labs?</option>
+                <option value="What do students recommend your lab to do to improve their lab teaching?">What do you recommend the lab instructors to do to improve their lab teaching?</option>
+            </select>
+            
+            <label for="feedback">Your feedback:</label>
+            <input type="text" name="feedback" id="feedback" placeholder="Please enter your feedback here." required>
+
+            <button type="submit">Submit</button>
+
+        </form>
+        <br>
+        <br>
+        <div class="footer">
+            <h2>CSCB20
+                <p>Introduction to Web & Database</p>
+            </h2>
+            <div class="content">Department of Computer Science at UofT
+                <p>Site designed by Zishuo Wang & Zhencheng Li & Lianhao Zhang</p>
+            </div>
+            <h2>Navigation</h2>
+                <a href="index"><li class="home">Home&nbsp;</li></a>
+                <a href="../static/image/B20.pdf" target="_blank"><li>Syllabus&nbsp;</li></a>
+                <a href="calendar"><li>Calendar&nbsp;</li></a>
+                <a href="news"><li>News&nbsp;</li></a>
+                <a href="https://piazza.com/class/lqy466htv8g5xb" target="_blank"><li>Piazza&nbsp;</li></a>
+                <a href="lectures"><li>Lectures&nbsp;</li></a>
+                <a href="labs"><li class="lab">Labs&nbsp;</li></a>
+                <a href="assignments"><li>Assignments&nbsp;</li></a>
+                <a href="tests"><li>Tests&nbsp;</li></a>
+                <a href="https://markus2.utsc.utoronto.ca/" target="_blank"><li>Markus&nbsp;</li></a>
+                <a href="courseteam"><li>CourseTeam&nbsp;</li></a>
+                <a href="feedback"><li>Anon Feedback&nbsp;</li></a>
+        </div>
+    </body>
+</html>

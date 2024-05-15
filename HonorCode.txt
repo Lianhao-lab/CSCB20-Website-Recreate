@@ -1,0 +1,11 @@
+Honor Code: We (Zishuo Wang #1008763090 ) pledge that this program represents my own program code 
+and that we have coded on my own. We received help from no one in designing and debugging my program. 
+We have also read the plagiarism section in the course info sheet of CSC B20 and understand the consequences.
+
+Honor Code: We (Lianhao Zhang #1009281055 ) pledge that this program represents my own program code 
+and that we have coded on my own. We received help from no one in designing and debugging my program. 
+We have also read the plagiarism section in the course info sheet of CSC B20 and understand the consequences.
+
+Honor Code: We (Zhencheng Li #1006510018 ) pledge that this program represents my own program code 
+and that we have coded on my own. We received help from no one in designing and debugging my program. 
+We have also read the plagiarism section in the course info sheet of CSC B20 and understand the consequences.

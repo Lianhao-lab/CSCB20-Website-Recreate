@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>CSCB20-Home</title>
+        <link rel="stylesheet" type="text/css" href="../static/style/index.css">
+    </head>
+    <body>
+        <div class="navigation">
+            <li class="navigation"><a class="active" href="/">Home&nbsp;</a></li>
+            <li class="navigation"><a href="../static/image/B20.pdf" target="_blank">Syllabus&nbsp;</a></li>
+            <li class="navigation"><a href="/calendar">Calendar&nbsp;</a></li>
+            <li class="navigation"><a href="/news">News&nbsp;</a></li>
+            <li class="navigation"><a href="https://piazza.com/class/lqy466htv8g5xb" target="_blank">Piazza&nbsp;</a></li>
+            <li class="navigation"><a href="/lectures">Lectures&nbsp;</a></li>
+            <li class="navigation"><a href="/labs">Labs&nbsp;</a></li>
+            <li class="navigation"><a href="/assignments">Assignments&nbsp;</a></li>
+            <li class="navigation"><a href="/tests">Tests&nbsp;</a></li>
+            <li class="navigation"><a href="https://markus2.utsc.utoronto.ca/" target="_blank">Markus&nbsp;</a></li>
+            <li class="navigation"><a href="/courseteam">CourseTeam&nbsp;</a></li>
+            <li class="navigation"><a href="/feedback">Feedback</a></li>
+            <li class="navigation logout-button"><a href="/logout">Log out</a></li>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>Welcome to CSCB20H3</h1>
+        <div class = "welcome">
+        {% if is_instructor %}
+            <p>Welcome instructor {{ username }},</p>
+            <p><a href="/grades">Click here to see all the grades of your class.</a></p>
+        {% else %}
+            <p>Welcome {{ username }},</p>
+            <p><a href="/grade">click here to see your current grades.</a></p>
+        {% endif %}
+        </div>
+        <hr>
+        <div class="description">
+            <h2> Course Description</h2>
+            <hr>
+            <p>Introduction to Databases and Web Applications</p>
+            <p>A practical introduction to databases and Web app development.
+             Databases: terminology and applications; creating, 
+             querying and updating databases; the entity-relationship 
+             model for database design. Web documents and applications: 
+             static and interactive documents; Web servers and dynamic 
+             server-generated content; Web application development and 
+             interface with databases.</p>
+            <p><strong>Prerequisite:</strong> Some experience with programming 
+                in an imperative language such as Python, Java or C.</p>
+            <p><strong>Exclusion: </strong> This course may not be taken 
+                after - or concurrently with - any C- or D-level CSC course.</p>
+            <p><strong>Recommended Preparation </strong> <a href="https://utsc.calendar.utoronto.ca/course/csca08h3" target="_blank">CSCA08H3&nbsp;</a>
+            <a href="https://utsc.calendar.utoronto.ca/course/csca20h3" target="_blank">CSCA20H3&nbsp;</a></p>
+            <p><strong>Breadth Requirements </strong> Quantitative Reasoning</p>
+        </div>
+
+        <div class="instructor">
+            <h2> Insuructor </h2>
+            <hr>
+            <p> Dr. Purva R. Gawde</p>
+            <a href="https://www.utsc.utoronto.ca/cms/purva-gawde-0" target="_blank">
+                <img src="../static/image/Purva.jpg" alt="Dr. Purva R. Gawde" width="150" height="150">
+            </a>
+            <p>Email: <a href="mailto:purva.gawde@cs.toronto.edu" target="_blank">purva.gawde@utoronto.ca</a></p>
+            <p>Piazza Link: <a href="https://piazza.com/class/lqy466htv8g5xb" target="_blank">Piazza</a></p>
+            <p>Lecture: Monday 9 to 11 (in-person) (not recorded).</p>
+            <p>Office Hours: Tuesday 12 to 1 IC 484</p>
+        </div>
+
+
+
+        <div class="footer">
+            <h2>CSCB20
+                <p>Introduction to Web & Database</p>
+            </h2>
+            <div class="content">Department of Computer Science at UofT
+                <p>Site designed by Zishuo Wang & Zhencheng Li & Lianhao Zhang</p>
+            </div>
+            <h2>Navigation</h2>
+                <a href="index"><li class="home">Home&nbsp;</li></a>
+                <a href="../static/image/B20.pdf" target="_blank"><li>Syllabus&nbsp;</li></a>
+                <a href="calendar"><li>Calendar&nbsp;</li></a>
+                <a href="news"><li>News&nbsp;</li></a>
+                <a href="https://piazza.com/class/lqy466htv8g5xb" target="_blank"><li>Piazza&nbsp;</li></a>
+                <a href="lectures"><li>Lectures&nbsp;</li></a>
+                <a href="labs"><li class="lab">Labs&nbsp;</li></a>
+                <a href="assignments"><li>Assignments&nbsp;</li></a>
+                <a href="tests"><li>Tests&nbsp;</li></a>
+                <a href="https://markus2.utsc.utoronto.ca/" target="_blank"><li>Markus&nbsp;</li></a>
+                <a href="courseteam"><li>CourseTeam&nbsp;</li></a>
+                <a href="feedback"><li>Anon Feedback&nbsp;</li></a>
+        </div>
+    </body>
+</html>
